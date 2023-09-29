@@ -1,0 +1,27 @@
+---
+title: "Jason's Map"
+output: html_document
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Jason's Map
+
+\`\`\`{r setup, include=FALSE} knitr::opts_chunk\$set(echo = TRUE) \#
+Load the leaflet package library(leaflet)
+
+# Set the initial map location (replace with your own latitude and longitude)
+
+initial_location \<- c(37.7749, -122.4194)
+
+# Create a leaflet map
+
+leaflet() %\>% setView(lng = initial_location[2], lat =
+initial_location[1], zoom = 13) %\>% addTiles() %\>% addMarkers(lng =
+initial_location[2], lat = initial_location[1], popup = "Your Location")
+
+2.  Knit the R Markdown document to create the HTML file:
+
+\`\`\`R rmarkdown::render("jason_map.Rmd")
